@@ -19,7 +19,7 @@
     />
   </head>
   <body>
-    <audio autoplay loop>
+    <audio id="audio" autoplay loop muted>
       <source src="nhac.mp3" type="audio/mpeg" />
     </audio>
     <div id="drag-container">
@@ -40,6 +40,17 @@
     <div id="canva">
       <canvas id="canvas"></canvas>
     </div>
+
+    <script>
+      window.onload = function () {
+        const audio = document.getElementById("audio");
+        audio.muted = false;
+        audio.play().catch((error) => {
+          console.log("Không thể phát nhạc: ", error);
+        });
+      };
+    </script>
+
     <script src="main.js"></script>
   </body>
 </html>
