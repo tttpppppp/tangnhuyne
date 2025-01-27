@@ -44,9 +44,11 @@
     <script>
       window.onload = function () {
         const audio = document.getElementById("audio");
-        audio.muted = false;
-        audio.play().catch((error) => {
-          console.log("Không thể phát nhạc: ", error);
+        document.body.addEventListener("click", function () {
+          audio.muted = false;
+          audio.play().catch((error) => {
+            console.log("Không thể phát nhạc: ", error);
+          });
         });
       };
     </script>
